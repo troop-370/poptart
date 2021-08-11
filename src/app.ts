@@ -28,4 +28,8 @@ app.get('/', (req, res) => {
 import { patrolsRouter } from './api/routes/patrols.route';
 app.use('/patrols', patrolsRouter);
 
+// add profiles routes
+import { profilesRouter } from './api/routes/profiles.route';
+app.use('/profiles', profilesRouter);
+
 export { app };
