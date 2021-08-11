@@ -1,0 +1,20 @@
+name: ESLint
+on:
+  # run on pull requests targeting the main branch
+  pull_request:
+    branches:
+      - main
+  # enable the "Run workflow" button on the Actions tab
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # get the repository files
+      - uses: actions/checkout@v2
+        # install node modules so that all dependencies are available, including eslint-related ones
+      - name: Install modules
+        run: npm install
+        # run eslint on javascript and typescipt files
+      - name: Run ESLint
+        run: ./node_modules/.bin/eslint . --ext .js,.ts
