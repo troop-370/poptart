@@ -1,9 +1,5 @@
 import { Response } from 'express';
-import mongoose from 'mongoose';
-import { IPatrolDoc } from '../../../mongodb/patrols.db';
 import { updatePatrol } from './updatePatrol';
-
-const model = mongoose.model<IPatrolDoc>('Patrols');
 
 /**
  * Hide a patrol from the patrols database by `id`.

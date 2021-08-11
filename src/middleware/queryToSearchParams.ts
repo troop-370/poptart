@@ -6,14 +6,10 @@ import { Request, Response, NextFunction } from 'express';
  *
  * Adds an instance of `URLSearchParams` based on `req.query` to `req.search`.
  */
-const queryToSearchParams = (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+const queryToSearchParams = (req: Request, res: Response, next: NextFunction): void => {
   // this is allowed because we modified the express types to include
   // search in the request object (see @types/express/index.d.ts)
-  req.search = new URLSearchParams(req.query as any);
+  req.search = new URLSearchParams(req.query as never);
   next();
 };
 
