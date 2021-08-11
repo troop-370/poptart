@@ -30,8 +30,11 @@ async function updatePatrol(
     const newHistostry = { type: histostryType, doc: oldPatrol };
 
     // processing data
-    data = {
-      ...data,
+    const { name, members, hidden } = data;
+    const changedData = {
+      name,
+      members,
+      hidden,
       timestamps: {
         // changing the modified_at timestamp
         ...data.timestamps,
@@ -42,7 +45,7 @@ async function updatePatrol(
     };
 
     // save the changes and update any remaining differences between data and the patrol
-    await model.updateOne({ _id: id }, { $set: data });
+    await model.updateOne({ _id: id }, { $set: changedData });
 
     // let the server know the change was successful
     if (res) {
