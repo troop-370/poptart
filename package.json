@@ -6,6 +6,7 @@
   "scripts": {
     "build": "eslint . --ext .js,.jsx,.ts,.tsx && tsc",
     "dev": "nodemon src/server.ts",
+    "lint": "eslint . --ext .js,.ts,",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jack Buehner",

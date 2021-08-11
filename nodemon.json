@@ -1,6 +1,6 @@
 {
   "watch": "src/**/*.ts",
   "execMap": {
-    "ts": "ts-node"
+    "ts": "npm run lint --quiet && ts-node"
   }
 }
