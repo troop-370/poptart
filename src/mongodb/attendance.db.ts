@@ -18,12 +18,12 @@ const AttendanceSchemaFields: Record<keyof IAttendance, unknown> = {
   uniform_points: { type: Number, required: true, default: 0 },
   timestamps: {
     created_at: {
-      type: String,
+      type: Date,
       required: true,
       default: new Date().toISOString(),
     },
     modified_at: {
-      type: String,
+      type: Date,
       required: true,
       default: new Date().toISOString(),
     },

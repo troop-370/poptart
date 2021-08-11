@@ -25,12 +25,12 @@ const PatrolSchemaFields: Record<keyof IPatrol, unknown> = {
   },
   timestamps: {
     created_at: {
-      type: String,
+      type: Date,
       required: true,
       default: new Date().toISOString(),
     },
     modified_at: {
-      type: String,
+      type: Date,
       required: true,
       default: new Date().toISOString(),
     },
