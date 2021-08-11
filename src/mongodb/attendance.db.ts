@@ -7,6 +7,7 @@ interface IAttendance {
   timestamps: {
     created_at: string;
     modified_at: string;
+    meeting_date: string;
   };
 }
 
@@ -26,6 +27,11 @@ const AttendanceSchemaFields: Record<keyof IAttendance, unknown> = {
       type: Date,
       required: true,
       default: new Date().toISOString(),
+    },
+    meeting_date: {
+      type: Date,
+      required: true,
+      default: `${new Date().toISOString().split('T')[0]}T00:00:00.000Z`, // ISO datetime string without meaningful time
     },
   },
 };
