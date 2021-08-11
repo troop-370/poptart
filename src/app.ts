@@ -28,4 +28,8 @@ app.get('/', (req, res) => {
 import { patrolsRouter } from './api/routes/patrols.route';
 app.use('/patrols', patrolsRouter);
 
+// add attendance sheets routes
+import { attendanceRouter } from './api/routes/attendance.route';
+app.use('/attendance', attendanceRouter);
+
 export { app };
