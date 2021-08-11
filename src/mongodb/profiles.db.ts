@@ -19,7 +19,7 @@ interface IProfile {
   hidden: boolean;
   histostry: {
     type: 'created' | 'patched' | 'hidden';
-    doc: IProfile;
+    doc: Partial<IProfile>;
   }[];
 }
 
