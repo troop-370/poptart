@@ -1,0 +1,11 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#003f87"
+  },
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'Dank Mono', Consolas, 'Courier New', monospace",
+  "editor.tabSize": 2,
+  "debug.console.fontFamily": "'Dank Mono', default",
+  "window.title": "${dirty}[poptart] ${activeEditorShort}"
+}
