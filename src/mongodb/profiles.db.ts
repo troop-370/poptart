@@ -27,7 +27,7 @@ interface IProfile {
 // the record ensures that the keys are part of IProfile (values unknown)
 const ProfileSchemaFields: Record<keyof IProfile, unknown> = {
   name: { type: String, required: true },
-  position: [String],
+  position: { type: [String], required: true, default: [] },
   patrol: mongoose.Types.ObjectId,
   membership: {
     troop: { type: Boolean, required: true, default: false },
