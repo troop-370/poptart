@@ -60,19 +60,19 @@ async function updateProfile(
     // we are going to update the database directly with the information in changedData
     await model.updateOne({ _id: id }, { $set: changedData }); // I can't find out why this isn't working, I cross-referenced with the patrols version and everything seems to be correct. :/
 
-    // let the server know that the change was successful
+    // let the client know that the change was successful
     if (res) {
       res.status(200).end();
     }
     // return the modified document in case of internal use
-    return await getProfile(id); // note that we need to go back to the server to find our profile because of the external function $set that we used.
+    return await getProfile(id); // note that we need to go back to the client to find our profile because of the external function $set that we used.
   } catch (error) {
     // show us the errors in console
     console.error(error);
-    // this will let the server know that the request failed
+    // this will let the client know that the request failed
     if (res) {
       res.status(400);
-      // lets the server know we are done
+      // lets the client know we are done
       res.end();
     }
   }

@@ -6,7 +6,7 @@ const Profile = mongoose.model<IProfileDoc>('Profiles');
 /**
  * Creates a new profile with important attributes
  * @param data The complete or incomplete data of the profile one would like to create.
- * @param res A holder for any sent prescribed response from the server.
+ * @param res A holder for any sent prescribed response from the client.
  * @returns The id of the created profile.
  */
 async function createProfile(data: IProfile, res: Response = null): Promise<IProfile> {
@@ -32,7 +32,7 @@ async function createProfile(data: IProfile, res: Response = null): Promise<IPro
     // saving the profile to the collection
     await profile.save();
 
-    // let the server know the profile is saved
+    // let the client know the profile is saved
     if (res) {
       res.status(201);
       res.json({ _id: profile.id });
@@ -44,7 +44,7 @@ async function createProfile(data: IProfile, res: Response = null): Promise<IPro
     // reveals errors in the console
     console.error(error);
     if (res) {
-      // lets the server know something went wrong
+      // lets the client know something went wrong
       res.status(400).end();
     }
   }
