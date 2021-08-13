@@ -21,14 +21,14 @@ async function updateProfile(
 ): Promise<IProfile> {
   try {
     //preparing the history element for the data document
-    const { histostry: prevHistostry, ...oldPatrol } = await getProfile(id);
-    delete oldPatrol.timestamps.created_at;
-    // @ts-ignore _id exists
-    delete oldPatrol._id;
-    // @ts-ignore __v exists
-    delete oldPatrol.__v;
+    const { histostry: prevHistostry, ...oldProfile } = await getProfile(id);
+    delete oldProfile.timestamps.created_at;
+    // @ts-expect-error _id exists
+    delete oldProfile._id;
+    // @ts-expect-error __v exists
+    delete oldProfile.__v;
     // combining our manicured patrol collection with the supplied histostry type (probably patched or hidden)
-    const newHistostry = { type: histostryType, doc: oldPatrol };
+    const newHistostry = { type: histostryType, doc: oldProfile };
 
     // itemizing our data partial document to more easily change important features
     const { name, position, patrol, hidden } = data;
