@@ -19,7 +19,8 @@ interface IProfile {
   hidden: boolean;
   histostry: {
     type: 'created' | 'patched' | 'hidden';
-    doc: IProfile;
+    // allows the histostry variable to contain less useless information
+    doc: Partial<IProfile>;
   }[];
 }
 
