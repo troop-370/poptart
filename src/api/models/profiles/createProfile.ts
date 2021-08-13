@@ -1,7 +1,6 @@
 import { Response } from 'express';
 import mongoose from 'mongoose';
 import { IProfileDoc, IProfile } from '../../../mongodb/profiles.db';
-import { patrolsRouter } from '../../routes/patrols.route';
 
 const Profile = mongoose.model<IProfileDoc>('Profiles');
 /**

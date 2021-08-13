@@ -1,4 +1,4 @@
-import { Router, Request, Response, request } from 'express';
+import { Router, Request, Response } from 'express';
 import { createProfile, deleteProfile, getProfile, getProfiles, hideProfile, updateProfile } from '../models/profiles';
 
 const router = Router();

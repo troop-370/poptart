@@ -3,8 +3,6 @@ import mongoose from 'mongoose';
 import { IProfileDoc } from '../../../mongodb/profiles.db';
 import { updateProfile } from './updateProfile';
 
-const model = mongoose.model<IProfileDoc>('Profiles');
-
 /**
  * Hide a profile from the profiles database by `id`.
  *
