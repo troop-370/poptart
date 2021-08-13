@@ -1,6 +1,4 @@
 import { Response } from 'express';
-import mongoose from 'mongoose';
-import { IProfileDoc } from '../../../mongodb/profiles.db';
 import { updateProfile } from './updateProfile';
 
 /**
@@ -12,7 +10,7 @@ import { updateProfile } from './updateProfile';
  */
 async function hideProfile(id: string, res: Response = null): Promise<void> {
   try {
-    // hide a profile (if it exists)
+    // hide a profile (if it exists) updateProfile will handle the rest
     await updateProfile(id, { hidden: true }, 'hidden', res);
   } catch (error) {
     // handle any errors
