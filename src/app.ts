@@ -32,4 +32,8 @@ app.use('/patrols', patrolsRouter);
 import { attendanceRouter } from './api/routes/attendance.route';
 app.use('/attendance', attendanceRouter);
 
+// add profiles routes
+import { profilesRouter } from './api/routes/profiles.route';
+app.use('/profiles', profilesRouter);
+
 export { app };

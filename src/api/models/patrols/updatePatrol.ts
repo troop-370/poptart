@@ -23,9 +23,9 @@ async function updatePatrol(
     // set the new history
     const { histostry: prevHistostry, ...oldPatrol } = await getPatrol(id);
     delete oldPatrol.timestamps.created_at;
-    // @ts-ignore _id exists
+    // @ts-expect-error _id exists
     delete oldPatrol._id;
-    // @ts-ignore __v exists
+    // @ts-expect-error __v exists
     delete oldPatrol.__v;
     const newHistostry = { type: histostryType, doc: oldPatrol };
 
